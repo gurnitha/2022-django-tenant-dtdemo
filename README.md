@@ -176,3 +176,27 @@ TENANT_DOMAIN_MODEL = "client.Domain" # app.Model
         modified:   README.md
         modified:   dtdemo/settings.py
 ```
+
+#### 7. Create new db schema called 'demo'
+
+```py
+# Create db schema 'demo'
+
+E:\workspace\django-2022\TENANTCY\2022-django-tenant-guide\2022-django-tenant-guide\dtdemo (master)
+(django-tenant) λ python manage.py create_tenant
+schema name: demo
+name: demo
+[1/1 (100%) standard:demo] === Starting migration
+[1/1 (100%) standard:demo] Operations to perform:
+[1/1 (100%) standard:demo]   Apply all migrations: admin, auth, client, contenttypes, sessions
+...
+[1/1 (100%) standard:demo]   Applying sessions.0001_initial...
+[1/1 (100%) standard:demo]  OK
+domain: demo.localhost
+is primary (leave blank to use 'True'):
+
+# New/modified files
+
+        modified:   README.md
+        new file:   client/migrations/0001_initial.py
+``
