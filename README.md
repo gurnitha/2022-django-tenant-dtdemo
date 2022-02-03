@@ -430,3 +430,25 @@ PUBLIC_SCHEMA_URLCONF = 'dtdemo.url_public'
         modified:   README.md
         modified:   dtdemo/settings.py
 ```
+
+#### 13. TESTING - Run the server and login as admin and as demoadmin
+
+```py
+# Demo frontent
+http://demo.localhost:8000
+
+# Demo admin
+http://demo.localhost:8000/admin/
+
+# Public --> It showing error
+http://localhost:8000/
+
+Page not found (404)
+No tenant for hostname "localhost"
+Request Method:	GET
+Request URL:	http://localhost:8000/
+
+# New/modified files
+
+        modified:   README.md
+```
