@@ -452,3 +452,45 @@ Request URL:	http://localhost:8000/
 
         modified:   README.md
 ```
+
+#### 14. SOLVING THE ERROR - In dtdemo create urls_public.py
+
+```py
+
+# 1. Create urls
+(django-tenant) λ touch dtdemo\urls_public.py
+
+# 2. Define urls_public.py
+
+# dtdemo/urls_public.py
+
+# Django modules
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+
+# 3. In settings.py add SHOW_PUBLIC_IF_NO_TENANT_FOUND
+SHOW_PUBLIC_IF_NO_TENANT_FOUND = True
+
+# 4. Run server 
+(django-tenant) λ python manage.py runserver
+
+# 5. Test it out
+# Go here
+http://www.localhost:8000
+http://www.localhost:8000/admin/
+
+# Or go here
+http://127.0.0.1:8000/
+http://127.0.0.1:8000/admin/
+
+# New/modified files
+
+        modified:   README.md
+        modified:   dtdemo/settings.py
+        new file:   dtdemo/urls_public.py
+
+```
