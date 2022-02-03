@@ -69,3 +69,31 @@ class Domain(DomainMixin):
         modified:   README.md
         modified:   client/models.py
 ```
+
+#### 3. Set database and db router
+
+```py
+
+# DATABASE
+DATABASES = {
+    'default': {
+        'ENGINE': 'django_tenants.postgresql_backend',
+        'NAME': 'django_tenant_guide_2022',
+        'USERNAME': 'postgres',
+        'PASSWORD': 'ing',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
+
+
+# DATABASE ROUTER
+DATABASE_ROUTERS = (
+    'django_tenants.routers.TenantSyncRouter',
+)
+
+# New/modified files
+
+        modified:   README.md
+        modified:   dtdemo/settings.py
+```
