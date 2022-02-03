@@ -199,4 +199,67 @@ is primary (leave blank to use 'True'):
 
         modified:   README.md
         new file:   client/migrations/0001_initial.py
-``
+```
+
+#### 8. Create sweet_shared and sweet_tenant apps
+
+```py
+
+# Create apps
+
+(django-tenant) λ python manage.py startapp sweet_shared
+(django-tenant) λ python manage.py startapp sweet_tenant
+
+# Install the a pps
+
+SHARED_APPS = [
+
+    'django_tenants', # new
+
+    # Locals
+    'client',   
+
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+
+    'sweet_shared',
+]
+
+
+TENANT_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    # Locals
+    'client',
+    'sweet_tenant',
+]
+
+# New/modified files
+
+        modified:   README.md
+        modified:   dtdemo/settings.py
+        new file:   sweet_shared/__init__.py
+        new file:   sweet_shared/admin.py
+        new file:   sweet_shared/apps.py
+        new file:   sweet_shared/migrations/__init__.py
+        new file:   sweet_shared/models.py
+        new file:   sweet_shared/tests.py
+        new file:   sweet_shared/views.py
+        new file:   sweet_tenant/__init__.py
+        new file:   sweet_tenant/admin.py
+        new file:   sweet_tenant/apps.py
+        new file:   sweet_tenant/migrations/__init__.py
+        new file:   sweet_tenant/models.py
+        new file:   sweet_tenant/tests.py
+        new file:   sweet_tenant/views.py
+```

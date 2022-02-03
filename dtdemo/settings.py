@@ -31,7 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 SHARED_APPS = [
+
     'django_tenants', # new
+
+    # Locals
+    'client',   
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,8 +44,8 @@ SHARED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Locals
-    'client',
+
+    'sweet_shared',
 ]
 
 
@@ -55,6 +59,7 @@ TENANT_APPS = [
 
     # Locals
     'client',
+    'sweet_tenant',
 ]
 
 
