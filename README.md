@@ -119,3 +119,44 @@ MIDDLEWARE = [
         modified:   README.md
         modified:   dtdemo/settings.py
 ```
+
+#### 5. Split the settings.py file
+
+```py
+SHARED_APPS = [
+    'django_tenants', # new
+
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    # Locals
+    'client',
+]
+
+
+TENANT_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    # Locals
+    'client',
+]
+
+
+INSTALLED_APPS = list(SHARED_APPS) + [
+    app for app in TENANT_APPS if app not in SHARED_APPS
+]
+
+# New/modified files
+
+        modified:   README.md
+        modified:   dtdemo/settings.py
+```
