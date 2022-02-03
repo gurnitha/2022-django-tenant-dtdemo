@@ -33,3 +33,39 @@ Tutorials on Youtube: https://www.youtube.com/channel/UCUKoRhPhS0INxh6RC1xN_TQ
         new file:   dtdemo/wsgi.py
         new file:   manage.py
 ````
+
+#### 2. Create Client and Domain models
+
+```py
+
+# shop/models.
+
+# Django modules
+from django.db import models
+from django_tenants.models import TenantMixin, DomainMixin
+
+# Create your models here.
+
+
+# MODEL: Shop as client
+class Client(TenantMixin):
+
+	name = models.CharField(max_length=100)
+
+	# Default true, schema will be authomatically 
+	# created and synced when it is save
+	auto_create_schema = True
+
+	def __str__(self):
+		return self.name 
+
+
+# MODEL: Domain
+class Domain(DomainMixin):
+	pass 
+
+# New/modified files
+
+        modified:   README.md
+        modified:   client/models.py
+```
