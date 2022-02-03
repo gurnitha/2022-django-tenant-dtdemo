@@ -85,7 +85,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Url for  tenanting
 ROOT_URLCONF = 'dtdemo.urls'
+# Url for public
+PUBLIC_SCHEMA_URLCONF = 'dtdemo.url_public'
 
 TEMPLATES = [
     {

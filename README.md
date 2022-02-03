@@ -415,3 +415,18 @@ Superuser created successfully.
 
         modified:   README.md
 ```
+
+#### 12. Create PUBLIC_SCHEMA_URLCONF url
+
+```py
+
+# Url for  tenanting
+ROOT_URLCONF = 'dtdemo.urls'
+# Url for public
+PUBLIC_SCHEMA_URLCONF = 'dtdemo.url_public'
+
+# New/modified files
+
+        modified:   README.md
+        modified:   dtdemo/settings.py
+```
