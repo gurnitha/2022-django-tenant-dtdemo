@@ -340,4 +340,44 @@ admin.site.register(Sweet)
         modified:   sweet_shared/models.py
         modified:   sweet_tenant/admin.py
         modified:   sweet_tenant/models.py
+``````
+
+#### 10. Run migrations
+
+```py
+
+
+# Create migrations
+(django-tenant) λ python manage.py makemigrations
+Migrations for 'sweet_shared':
+  sweet_shared\migrations\0001_initial.py
+    - Create model SweetType
+Migrations for 'sweet_tenant':
+  sweet_tenant\migrations\0001_initial.py
+    - Create model Sweet
+
+# Apply migration
+(django-tenant) λ python manage.py migrate
+[standard:public] === Starting migration
+[standard:public] Operations to perform:
+[standard:public]   Apply all migrations: admin, auth, client, contenttypes, sessions, sweet_shared, sweet_tenant
+[standard:public] Running migrations:
+[standard:public]   Applying sweet_shared.0001_initial...
+[standard:public]  OK
+[standard:public]   Applying sweet_tenant.0001_initial...
+[standard:public]  OK
+[1/1 (100%) standard:demo] === Starting migration
+[1/1 (100%) standard:demo] Operations to perform:
+[1/1 (100%) standard:demo]   Apply all migrations: admin, auth, client, contenttypes, sessions, sweet_shared, sweet_tenant
+[1/1 (100%) standard:demo] Running migrations:
+[1/1 (100%) standard:demo]   Applying sweet_shared.0001_initial...
+[1/1 (100%) standard:demo]  OK
+[1/1 (100%) standard:demo]   Applying sweet_tenant.0001_initial...
+[1/1 (100%) standard:demo]  OK
+
+# New/modified files
+
+        modified:   README.md
+        new file:   sweet_shared/migrations/0001_initial.py
+        new file:   sweet_tenant/migrations/0001_initial.py
 ```
