@@ -340,7 +340,7 @@ admin.site.register(Sweet)
         modified:   sweet_shared/models.py
         modified:   sweet_tenant/admin.py
         modified:   sweet_tenant/models.py
-``````
+```
 
 #### 10. Run migrations
 
@@ -380,4 +380,38 @@ Migrations for 'sweet_tenant':
         modified:   README.md
         new file:   sweet_shared/migrations/0001_initial.py
         new file:   sweet_tenant/migrations/0001_initial.py
+```
+
+#### 11. Create superuser for public and superuser for demo
+
+```py
+
+# Create superuser for public
+(django-tenant) λ python manage.py createsuperuser
+Username (leave blank to use 'hp'): admin
+Email address:
+Password:
+Password (again):
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+# Create superuser for demo
+(django-tenant) λ python manage.py create_tenant_superuser
+Enter Tenant Schema ('?' to list schemas): ?
+demo - demo.localhost
+Enter Tenant Schema ('?' to list schemas): demo
+Username (leave blank to use 'hp'): demoadmin
+Email address:
+Password:
+Password (again):
+The password is too similar to the username.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+# New/modified files
+
+        modified:   README.md
 ```
