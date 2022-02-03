@@ -97,3 +97,25 @@ DATABASE_ROUTERS = (
         modified:   README.md
         modified:   dtdemo/settings.py
 ```
+
+#### 4. Adding TenantMainMiddleware
+
+```py
+
+# Add middleware
+MIDDLEWARE = [
+    'django_tenants.middleware.main.TenantMainMiddleware', # new TenantMainMiddleware
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+# New/modified files
+
+        modified:   README.md
+        modified:   dtdemo/settings.py
+```
