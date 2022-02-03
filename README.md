@@ -494,3 +494,49 @@ http://127.0.0.1:8000/admin/
         new file:   dtdemo/urls_public.py
 
 ```
+
+#### 15. NEW TENANT - Create a new tenant 'demo2' and its superuser
+
+```py
+
+# 1. Create a new tenant 'demo2'
+
+(django-tenant) λ python manage.py create_tenant
+schema name: demo2
+name: demo2
+[1/1 (100%) standard:demo2] === Starting migration
+[1/1 (100%) standard:demo2] Operations to perform:
+...
+[1/1 (100%) standard:demo2]   Applying sweet_tenant.0001_initial...
+[1/1 (100%) standard:demo2]  OK
+domain: demo2.localhost
+is primary (leave blank to use 'True'):
+
+# 2. Create superuser for demo2
+
+(django-tenant) λ python manage.py create_tenant_superuser
+Enter Tenant Schema ('?' to list schemas): ?
+demo - demo.localhost
+demo2 - demo2.localhost
+Enter Tenant Schema ('?' to list schemas): demo2
+Username (leave blank to use 'hp'): demo2admin
+Email address: demo2admin@email.com
+Password:
+Password (again):
+The password is too similar to the username.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+# 3. Run the server
+(django-tenant) λ python manage.py create_tenant_superuser
+
+# 4. Test it out
+
+# Go here
+http://demo2.localhost:8000/
+http://demo2.localhost:8000/admin/
+
+# New/modified files
+
+        modified:   README.md
+```
