@@ -160,3 +160,19 @@ INSTALLED_APPS = list(SHARED_APPS) + [
         modified:   README.md
         modified:   dtdemo/settings.py
 ```
+
+#### 6. Configure TENANT_MODEL and TENANT_DOMAIN_MODEL
+
+```py
+# Define on settings.py which model is your tenant model. 
+# Assuming you created Client inside an app named client, 
+# your TENANT_MODEL should look like this:
+
+TENANT_MODEL        = "client.Client" # app.Model
+TENANT_DOMAIN_MODEL = "client.Domain" # app.Model
+
+# New/modified files
+
+        modified:   README.md
+        modified:   dtdemo/settings.py
+```

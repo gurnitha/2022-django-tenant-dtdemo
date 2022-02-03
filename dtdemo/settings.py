@@ -62,6 +62,13 @@ INSTALLED_APPS = list(SHARED_APPS) + [
     app for app in TENANT_APPS if app not in SHARED_APPS
 ]
 
+# Define on settings.py which model is your tenant model. 
+# Assuming you created Client inside an app named client, 
+# your TENANT_MODEL should look like this:
+
+TENANT_MODEL        = "client.Client" # app.Model
+TENANT_DOMAIN_MODEL = "client.Domain" # app.Model
+
 MIDDLEWARE = [
     'django_tenants.middleware.main.TenantMainMiddleware', # new TenantMainMiddleware
     'django.middleware.security.SecurityMiddleware',
